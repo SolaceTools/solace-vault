@@ -1,9 +1,9 @@
 .navbar {
-    position: fixed;       /* Fixes navbar to the top */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;           /* Full width */
-    z-index: 999;          /* Ensure it's above other content */
+    width: 100%;
+    z-index: 999;
     background-color: #1e1e1e;
     padding: 10px 20px;
     border-bottom: 1px solid #333;
@@ -11,9 +11,8 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
-/* Add padding to page content so it's not hidden under navbar */
 .main-content {
-    padding-top: 60px;   /* Adjust to navbar height */
+    padding-top: 60px;
 }
 
 .navbar-container {
@@ -80,3 +79,4 @@
 .logout-btn:hover {
     background-color: #c9302c;
 }
+
