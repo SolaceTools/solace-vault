@@ -14,7 +14,7 @@ A secure, local-first zero-knowledge vault for storing sensitive data.
 
 ## 📥 Download (Windows)  
 
-- [Download SolaceVault.exe](https://github.com/YourName/SolaceVault/releases)  
+- [Download SolaceVault.exe](https://github.com/SolaceTools/solace-vault/releases)  
 
 ⚠️ **Note on SmartScreen & Antivirus Warnings:**  
 Windows may show a warning because the app is **not digitally signed**. This is common for open-source apps.  
@@ -33,5 +33,5 @@ If you trust the source:
 
 ### 1️⃣ Clone the Repository  
 ```bash
-git clone https://github.com/YourName/SolaceVault.git
-cd SolaceVault
+git clone https://github.com/SolaceTools/solace-vault.git
+cd solace-vault
