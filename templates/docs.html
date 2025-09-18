@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLiD Vault Documentation</title>
+    <link rel="stylesheet" href="static/css/docs.css">
+</head>
+<body>
+    <header>
+        <h1>Solace Vault Docs</h1>
+        <nav>
+            <a href="/dashboard">Dashboard</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Overview</h2>
+            <p>SOLiD Vault is a <span class="highlight">local-only</span>, <span class="highlight">zero-knowledge</span> encrypted vault for storing cryptocurrency seeds, private keys, and other sensitive data securely on your own device. No cloud storage is used.</p>
+        </section>
+
+        <section>
+            <h2>Features</h2>
+            <ul>
+                <li>Local-only storage — no external servers or cloud required</li>
+                <li>Zero-knowledge encryption using <span class="highlight">Argon2id</span> + <span class="highlight">AES-GCM</span></li>
+                <li>Automatic backup to a local JSON file for easy migration to other devices</li>
+                <li>Activity logs: track uploads, views, deletions, and login attempts</li>
+                <li>Flexible secret categorization (Seed, Private Key, Other) with labels and tags</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Security</h2>
+            <p>Every secret is encrypted with a unique AES key, which itself is encrypted with a key derived from your master password using Argon2id (memory-hard, state-of-the-art KDF).</p>
+            <p>Even if someone copies the backup file, without the correct master password the data is <strong>unreadable</strong>.</p>
+            <pre>
+    Encryption Flow:
+
+    Master Password ─► Argon2id ─► Master Key ─► Encrypt Secret Key ─► AES-GCM ─► Secret Data
+            </pre>
+        </section>
+
+        <section>
+            <h2>Backup & Restore</h2>
+            <ul>
+                <li>Every upload automatically updates <code>backup.json</code> in your vault directory</li>
+                <li>You can import this JSON on another device as long as you use the <strong>same master password</strong></li>
+                <li>Importing validates decryption before adding any secrets to the local vault</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Usage</h2>
+            <p>1. Setup a master password.</p>
+            <p>2. Upload seeds, private keys, or other sensitive information.</p>
+            <p>3. All operations (view, delete, change password) are logged automatically.</p>
+        </section>
+
+        <section>
+            <h2>Activity Logs</h2>
+            <p>The vault keeps detailed logs of actions:</p>
+            <ul>
+                <li>Login attempts (success and failure)</li>
+                <li>Secret uploads, views, and deletions</li>
+                <li>Password changes</li>
+                <li>Backup imports</li>
+            </ul>
+            <p>Logs can be viewed in the "Logs" section of the app for auditing and security purposes.</p>
+        </section>
+    </main>
+
+    <footer>
+        Solace Vault Docs
+    </footer>
+</body>
+</html>

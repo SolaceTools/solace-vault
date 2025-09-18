@@ -1,0 +1,34 @@
+.btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.btn:hover {
+    transform: translateY(-3px);
+}
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn-primary {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.btn-danger {
+    background-color: rgb(225, 65, 65);
+    color: #fff;
+}
+
+.btn-secondary {
+    background: #333;
+    color: #fff;
+    border: none;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+}

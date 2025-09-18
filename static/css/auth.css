@@ -1,0 +1,108 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #121212;
+    padding: 20px;
+}
+
+.auth-card {
+    background: #1f1f1f;
+    padding: 40px 35px;
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.7);
+    text-align: center;
+    width: 360px;
+    max-width: 100%;
+}
+
+.auth-logo {
+    width: 90px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.auth-card h2 {
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: #fff;
+}
+
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.password-input-wrapper {
+    position: relative;
+}
+
+.password-input-wrapper input {
+    width: 100%;
+    padding: 14px 50px 14px 16px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    background: #2a2a2a;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+}
+
+.toggle-show {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #00FFA3;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.strength-meter {
+    height: 8px;
+    background: #333;
+    border-radius: 5px;
+    margin: 5px 0 10px 0;
+    overflow: hidden;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 5px;
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+.btn {
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.btn-primary {
+    background-color: #00FFA3;
+    color: #121212;
+}
+
+.btn-generate {
+    background-color: #444;
+    color: #fff;
+}
+
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear,
+input[type="password"]::-webkit-password-toggle-button {
+    display: none !important;
+}
+
+input[type="password"] {
+    -webkit-text-security: disc;
+}

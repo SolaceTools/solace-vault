@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Upload Secret{% endblock %}
+{% block content %}
+<div class="card-container">
+    <div class="card">
+        <h3>Upload Secret</h3>
+        <form method="POST" autocomplete="off">
+            <div class="form-group">
+                <select id="category" name="category">
+                    <option value="Seed">Seed</option>
+                    <option value="Private Key">Private Key</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="label" name="label" placeholder="Label" maxlength="60">
+            </div>
+
+            <div class="form-group">
+                <textarea id="data" name="data" placeholder="Secret"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <input type="text" id="tag" name="tag" placeholder="Tag (optional)" maxlength="30">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Encrypt</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

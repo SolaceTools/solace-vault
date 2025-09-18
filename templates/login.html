@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="auth-logo">
+        <h2>Login</h2>
+        <form method="POST">
+            <div class="password-input-wrapper">
+                <input type="password" id="password" name="password" placeholder="Password">
+                <button type="button" class="toggle-show" id="toggle-show">Show</button>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+{% set show_navbar = False %}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}SOLiD Vault{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flash.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/card.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/secret.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/logs.css') }}">
+    
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/password_strength.js') }}"></script>
+</head>
+<body>
+    {% if show_navbar is not defined or show_navbar %}
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="navbar-logo">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Vault Logo">
+                    <span>Solace Vault</span>
+                    <span class="nav-badge">BETA</span>
+                </div>
+
+                <ul class="navbar-links">
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/upload">Upload</a></li>
+                    <li><a href="/import_backup">Import</a></li>
+                    <li><a href="/logs">Logs</a></li>
+                    <li><a href="/change_password">Change Password</a></li>
+                    <li><a href="/docs">Docs</a></li>
+                    <li><a href="/logout" class="logout-btn">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    {% endif %}
+
+    <main>
+        <div class="flash-messages">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% for category, message in messages %}
+                <div class="flash-message {{ category }}">
+                    <div class="flash-content">
+                        <pre>{{ message }}</pre>
+                        <button class="close-flash" onclick="this.parentElement.parentElement.remove()">×</button>
+                    </div>
+                </div>
+                {% endfor %}
+            {% endwith %}
+        </div>
+
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

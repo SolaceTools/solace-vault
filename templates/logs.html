@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Logs{% endblock %}
+{% block content %}
+<div class="container">
+    <h2 class="log-header">Activity Logs</h2>
+    <ul class="logs-list">
+        {% for log in logs %}
+            <li class="{% if 'failed' in log.action|lower %}log-failed{% elif 'login' in log.action|lower or 'success' in log.action|lower %}log-success{% else %}log-info{% endif %}">
+                <span class="log-timestamp">{{ log.timestamp|format_timestamp }}</span>
+                <span class="log-action">
+                    <span class="log-icon"></span>
+                    {{ log.action }}
+                    {% if log.category %} 
+                        <span class="log-category">({{ log.category }}{% if log.label %}: {{ log.label }}{% endif %})</span>
+                    {% endif %}
+                </span>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

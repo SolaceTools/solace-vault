@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Import Backup{% endblock %}
+{% block content %}
+<div class="card-container">
+    <div class="card">
+        <h3>Import Backup</h3>
+        <form method="post" enctype="multipart/form-data">
+            <div class="custom-file-input">
+                <input type="file" name="backup_file" id="backup_file" accept=".json" required onchange="document.getElementById('file_name_display').textContent = this.files[0]?.name || ''">
+                <label for="backup_file">Choose Backup File</label>
+                <div id="file_name_display" class="file-name"></div>
+            </div>
+            <div class="info-box">
+                <p><strong>Important Information</strong></p>
+                <ul>
+                    <li>The backup file must be encrypted with <strong>your current vault master password</strong>. Secrets encrypted with a different password will <em>not</em> be imported.</li>
+                    <li>Duplicate secrets (with the same ID) will be skipped to avoid conflicts.</li>
+                    <li>Ensure your backup file is a valid <code>.json</code> exported from a SOLiD Vault instance.</li>
+                    <li>All imported secrets remain encrypted and securely stored in your vault.</li>
+                </ul>
+            </div>
+            <button type="submit" class="btn btn-primary">Import</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
