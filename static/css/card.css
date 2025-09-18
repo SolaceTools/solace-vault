@@ -39,7 +39,6 @@
     font-family: inherit;
 }
 
-/* Hide the default file input */
 .custom-file-input input[type="file"] {
     position: absolute;
     left: 0;
@@ -50,7 +49,6 @@
     cursor: pointer;
 }
 
-/* Styled label that looks like a button */
 .custom-file-input label {
     display: block;
     padding: 10px 15px;
@@ -67,10 +65,10 @@
     background-color: #555;
 }
 
-/* Optional: display selected file name */
 .custom-file-input .file-name {
     margin-top: 5px;
     font-size: 0.9rem;
     color: #ccc;
     word-break: break-all;
+
 }
